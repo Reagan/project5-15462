@@ -18,7 +18,7 @@
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/Reagan/project5-15462">View on GitHub</a>
 
-          <h1 id="project_title">Assignment 5</h1>
+          <h1 id="project_title">Assignment 5: Go further</h1>
           <h2 id="project_tagline"></h2>
 
             <section id="downloads">
@@ -48,6 +48,9 @@
 <li><p><em>Support for additional types of subdivision surfaces.</em>  In your assignment you implemented Loop subdivision, which is useful when working with triangle meshes.  However, many natural objects are more easily modeled using quadrilateral meshes, since in general surfaces will have two orthogonal directions of principal curvature.  The half edge mesh class already supports general polygon meshes; you may want to extend your subdivision support to include, say, quad meshes by implementing something like the <a href="https://en.wikipedia.org/wiki/Catmull%E2%80%93Clark_subdivision_surface">Catmull-Clark</a> subdivision scheme.</p></li>
 <li><p><em>Fast preview of subdivided surface</em>.  Also, it's worth noticing that most professional subdivision tools allow to work on a coarse "control cage" while simultaneously getting a preview of what the final subdivided surface will look like.  In other words, the user doesn't actually ever dice the surface into tiny polygons; they simply use the vertices, edges, and faces of the coarse shape as a way to manipulate the smooth subdivided surface.  It would definitely be valuable in your modeler to provide this kind of functionality, either by <a href="http://research.microsoft.com/en-us/um/people/cloop/accTOG.pdf">approximating subdivision patches with simpler surfaces</a> or simply by coming up with an intelligent scheme to update a fine subdivision mesh whenever the coarse vertices are changed.  One thing to think about here is that, even after <em>n</em> subdivision steps, each subdivided vertex has a linear relationship to the vertices in the control cage.  So, you could precompute a mapping (e.g., a matrix) from coarse positions to fine positions in order to get a fast preview (...until the connectivity of the coarse cage gets updated!).</p></li>
 </ul>
+
+ </section>
+    </div>
 
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
