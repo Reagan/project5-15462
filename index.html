@@ -121,12 +121,12 @@
 <ol>
 <li>A global variable roundsCatmullClark was created and manipulated (i.e. increased or decreased) using the methods MeshEdit::addCatmullClarkSubdivisionLevels() and MeshEdit::removeCatmullClarkSubdivisionLevels(). These methods increased and reduced the number of Catmull-Clark subdivision levels in meshEdit.cpp.</li>
 
-<li>These methods performed Catmull-Clark subdivision on all meshes in the scene. and finally by calling the method HalfedgeMesh* MeshResampler::catmullClarkSubdivide( HalfedgeMesh& mesh, int rounds ) in student_code.cpp to perform the actual Catmull-Clark subdivision steps
+<li>These methods performed Catmull-Clark subdivision on all meshes in the scene. and finally by calling the method <code>HalfedgeMesh* MeshResampler::catmullClarkSubdivide( HalfedgeMesh& mesh, int rounds )</code> in student_code.cpp to perform the actual Catmull-Clark subdivision steps
 </li>
 
 </p>
 
-<p>The steps taken to implement the Catmull-Clark algorithm in the StarterCode in student_code.cpp in HalfedgeMesh* MeshResampler::catmullClarkSubdivide( HalfedgeMesh& mesh, int rounds ) were
+<p>The steps taken to implement the Catmull-Clark algorithm in the StarterCode in student_code.cpp in <code>HalfedgeMesh* MeshResampler::catmullClarkSubdivide( HalfedgeMesh& mesh, int rounds )</code> were
 <ul>
 <li>Find the new face points: Here all edges were traversed and for each face, it's 3 Vector3D vertices were used to find the midpoints dubbed 'face points'.
 
@@ -211,7 +211,7 @@ since n=4
 </pre>
 </p>
 
-<p>For each vertex, the function HalfedgeMesh* MeshResampler::catmullClarkSubdivide( HalfedgeMesh& mesh, int rounds ) in student_code.cpp calculated the average of neighboring face points, sorrounding mid points and summed the weighted values of these with the a weighted value of the current control point/vertex to determine the new vertex/control point of the current point</p>
+<p>For each vertex, the function <code>HalfedgeMesh* MeshResampler::catmullClarkSubdivide( HalfedgeMesh& mesh, int rounds )</code> in student_code.cpp calculated the average of neighboring face points, sorrounding mid points and summed the weighted values of these with the a weighted value of the current control point/vertex to determine the new vertex/control point of the current point</p>
 
 <pre>
 for (VertexIter vIter = mesh.verticesBegin() ; vIter != mesh.verticesEnd(); vIter++) {
