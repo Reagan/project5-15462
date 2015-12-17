@@ -22,8 +22,8 @@
 </li>
 <li>void MeshEdit::drawEdges( HalfedgeMesh& mesh ) was modified to detect a change in the size of the vector storing selected mesh features and automatically adapt the element style
 
-```c
- // set the default style
+<pre>
+ 	    // set the default style
             setElementStyle( elementAddress( e ) );
 
             // find if the current edge is contained as part of the selected edges
@@ -31,7 +31,8 @@
             {
                 for (std::vector<MeshFeature>::iterator iter = selectedMeshFeatures.begin();
                      iter != selectedMeshFeatures.end(); ++iter )
-```
+		     ...
+</pre>
 </li>
 <li>The starter code was modified to create a new style that would represent the selected items that were being modified as a group of edges. This style was applied to edges using the method call setMultipleElementStyle(curr_e) and the new style was created in void MeshEdit::initializeStyle( void ) where it is referred to as combinedStyle with its halfedge, faceColor, edgeColor, vertexColor, strokeWidth and vertexRadius set.
 </li>
