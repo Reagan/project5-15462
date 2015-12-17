@@ -1,3 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Project5-15462 : ">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Project5-15462: Creating a Subdivision modeller</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/Reagan/project5-15462">View on GitHub</a>
+
+          <h1 id="project_title">Assignment 5: Go further</h1>
+          <h2 id="project_tagline">Team members: Reagan Mbitiru &lt;rmugo@andrew.cmu.edu></h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/Reagan/project5-15462/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/Reagan/project5-15462/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+
+<h2>
+<a id="option-a-subdivision-modeler" class="anchor" href="#option-a-subdivision-modeler" aria-hidden="true"><span class="octicon octicon-link"></span></a>Option A: Subdivision Modeler
+</h2>
+
+<p><img src="http://15462.courses.cs.cmu.edu/fall2015content/misc/asst5_images/boxmodeling.jpg" alt="Box modeling example"></p>
+
+<p>Many modern 3D modelers are based on subdivision tools that are not much different from the "MeshEdit" tool you started to build your earlier assignment.  The basic idea is that the artist starts with a simple primitive like a cube, and adds more and more detail to the model via primitive operations like extruding faces and beveling edges. <a href="https://youtu.be/HawphRvPusA">Here is one example video</a>, but you can find many, many more by simply Googling "box modeling" or "subdivision modeling," which you should definitely do if you chose to pursue this project.  You should also take a look at some different modeling packages, such as <a href="http://www.wings3d.com">Wings3D</a>, <a href="https://www.rhino3d.com">Rhino</a>, <a href="https://www.thefoundry.co.uk/products/modo/">modo</a>, <a href="https://www.blender.org">Blender</a>, <a href="http://www.autodesk.com/products/maya">Maya</a>, and <a href="http://www.sidefx.com">Houdini</a>.  Many of these are commercial packages, but still offer a useful glimpse at the world of subdivision modeling.  A few packages (like Blender and Wings3D) are free, and you should try downloading them and playing around with them.</p>
+
+<p>Your goal will be to develop your mesh editing software into a basic subdivision modeler.  Some directions of extension include:</p>
+
+<ul>
+<li><p><em>Additional atomic editing operations.</em>  For instance, in your previous assignment you implemented edge flips, splits, and collapses.  What are some convenient operations for polygon modeling?  Common ones include, say, face extrusion and edge beveling.  But there are many more options, and the goal of this assignment is to play around with the polygon modeling paradigm in new and creative ways.</p></li>
+<li><p><em>Additional selection modes.</em>  Almost as important as convenient meshing operations are intelligent selection modes.  For instance, it is very common to allow the user to select a "loop" of faces, for things like adding additional detail around the eyes and mouth (you will see this kind of operation in many videos on box modeling).  Adding additional selection modes will require some re-thinking and re-tooling of the viewer itself, but all the fundamental code you need (picking, etc.) is already there.</p></li>
+<li><p><em>Support for additional types of subdivision surfaces.</em>  In your assignment you implemented Loop subdivision, which is useful when working with triangle meshes.  However, many natural objects are more easily modeled using quadrilateral meshes, since in general surfaces will have two orthogonal directions of principal curvature.  The half edge mesh class already supports general polygon meshes; you may want to extend your subdivision support to include, say, quad meshes by implementing something like the <a href="https://en.wikipedia.org/wiki/Catmull%E2%80%93Clark_subdivision_surface">Catmull-Clark</a> subdivision scheme.</p></li>
+<li><p><em>Fast preview of subdivided surface</em>.  Also, it's worth noticing that most professional subdivision tools allow to work on a coarse "control cage" while simultaneously getting a preview of what the final subdivided surface will look like.  In other words, the user doesn't actually ever dice the surface into tiny polygons; they simply use the vertices, edges, and faces of the coarse shape as a way to manipulate the smooth subdivided surface.  It would definitely be valuable in your modeler to provide this kind of functionality, either by <a href="http://research.microsoft.com/en-us/um/people/cloop/accTOG.pdf">approximating subdivision patches with simpler surfaces</a> or simply by coming up with an intelligent scheme to update a fine subdivision mesh whenever the coarse vertices are changed.  One thing to think about here is that, even after <em>n</em> subdivision steps, each subdivided vertex has a linear relationship to the vertices in the control cage.  So, you could precompute a mapping (e.g., a matrix) from coarse positions to fine positions in order to get a fast preview (...until the connectivity of the coarse cage gets updated!).</p></li>
+</ul>
+
+ </section>
+    </div>
+    
+    
+    <!-- Project report section-->
+
 <h3>Part 1: What I did</h3>
 <p>The two main objectives of this project were to allow to mutiple selection of nodes (to allow for modelling of a 'group' of edges at once) and the implementation of the Catmull-Clark algorithm to better understand three dimensional meshes and how subdivision works to create smoother images. </p>
 
@@ -202,3 +259,16 @@ for (VertexIter vIter = mesh.verticesBegin() ; vIter != mesh.verticesEnd(); vIte
 <h4>Image of Catmull-Clark algorithm in operation</h4>
 
 <p><i>Image showing subdivided cube using the Catmull-Clark algorithm</i></p>
+    
+    <!-- end project report section --> 
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Project5-15462 maintained by <a href="https://github.com/Reagan">Reagan</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+  </body>
+</html>
