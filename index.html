@@ -51,9 +51,9 @@
 
 <h4>Image of loop selection in operation</h4>
 
-<img width="700" src="http://i63.tinypic.com/ibc0v5.png" />
+<p><img width="700" src="http://i63.tinypic.com/ibc0v5.png" /></p>
 
-<p></p><i>Image showing 3 edges selected for editing at the same time ('loop' selection)</i></p>
+<i>Image showing 3 edges selected for editing at the same time ('loop' selection)</i>
 
 <h3>Implementing Catmull Clark Subdivision algorithm</h3>
 
@@ -74,6 +74,43 @@
 <p>The steps taken to implement the Catmull-Clark algorithm in the StarterCode in student_code.cpp in HalfedgeMesh* MeshResampler::catmullClarkSubdivide( HalfedgeMesh& mesh, int rounds ) were
 <ul>
 <li>Find the new face points: Here all edges were traversed and for each face, it's 3 Vector3D vertices were used to find the midpoints dubbed 'face points'.
+
+<pre>
+// loop through all half edges
+            HalfedgeIter h = vIter->halfedge(); // get one of the outgoing half-edges of the vertex
+            do
+            {
+               // get the half edge's face
+               FaceIter currFace = h->face();
+
+               // find if the current face has already been processed
+               vector <FaceCIter>::iterator i = processedFaces.begin ();
+               i = find(processedFaces.begin (), processedFaces.end(), currFace);
+
+               if (i == processedFaces.end ())
+               {
+                  cout << "face not found. processing..." << endl ;
+                  // ** perform processing **//
+                  // get the next 2 vertices
+                  VertexCIter vNext = h->next()->next()->vertex() ;
+                  VertexCIter vNextNext = h->next()->next()->next()->vertex() ;
+
+                  // get the 3 vertices
+                  Vector3D firstVertexLocation = vIter->position ;
+                  Vector3D secondVertexLocation = vNext->position ;
+                  Vector3D thirdVertexLocation = vNextNext->position ;
+
+                  // get the mean of the location
+                  Vector3D meanLocation;
+                  //((firstVertexLocation + secondVertexLocation + thirdVertexLocation) /3) ;
+
+                  // append to mean locations
+                  currFace->centerPoint = meanLocation ;
+
+                  // add face to set of processed faces
+                  processedFaces.push_back(currFace) ;
+</pre>
+
 </li>
 
 <li>Finding new edge points: New edge points were determined by traversing each edge and finding the average of the 2 vertices of the edge and the newly created adjacent face points created on each side of the edge. 
