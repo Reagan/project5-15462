@@ -114,6 +114,28 @@
 </li>
 
 <li>Finding new edge points: New edge points were determined by traversing each edge and finding the average of the 2 vertices of the edge and the newly created adjacent face points created on each side of the edge. 
+
+<pre>
+for (EdgeIter vIter = mesh.edgesBegin() ; vIter != mesh.edgesEnd(); vIter++) {
+
+             cout << "computing average for edge: " << i <<  " " << endl ; i++;
+
+             // get the location for the current vertex
+             Vector3D currVertexPos = vIter->halfedge()->vertex()->position ;
+
+             // get the next vertex
+             Vector3D vIterNextPos = vIter->halfedge()->next()->vertex()->position ;
+
+             // get the current edge's face' face point
+             Vector3D currEdgeFaceCenterPoint = vIter->halfedge()->face()->centerPoint ;
+
+             // get the twin's half edge face's face point
+             Vector3D twinHalfEdgeFaceCenterPoint = vIter->halfedge()->twin()->face()->centerPoint ;
+
+             // get the mean of all locations
+             vIter->newPosition = (currVertexPos + vIterNextPos + currEdgeFaceCenterPoint + twinHalfEdgeFaceCenterPoint) / 4 ;
+          }
+</pre>
 </li>
 
 <li>Moving vertices to create new control points: New control points or vertices were created by evaluating the formula:
