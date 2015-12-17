@@ -1,8 +1,16 @@
 <h3>Part 1: What I did</h3>
-<p>The two main objectives of this project were to allow to mutiple selection of nodes (to allow for modelling of a 'group' of edges at once) and the impplementation of the Catmull-Clark algorithm to better understand three dimensional meshes and how subdivision works to creat smoother images. </p>
+<p>The two main objectives of this project were to allow to mutiple selection of nodes (to allow for modelling of a 'group' of edges at once) and the implementation of the Catmull-Clark algorithm to better understand three dimensional meshes and how subdivision works to create smoother images. </p>
+
+<p>The objectives of the project were to: 
+<ol>
+<li>Allow multiple selection of edges for 'loop' editing (i.e. edit a number of edges at the same time.</li>
+<li>Implement the Catmull-Clark subdivision algorithm on rendered meshes. </li>
+</ol>
+</p>
 
 <h3>Multiple/Loop selection of nodes</h3>
 
+<pM 
 <p>To extend the base code to allow for multiple selection of edges, the starter code was modified in the following way:
 <ol>
   <li>To begin multiple selection of nodes, users would select the 'y' key. To stop multiple selection, users would select the 'z' key. To allow for this, a few methods were added to meshEdit.cpp. The 2 methods that mark the beginning of common selection of nodes are setCommonCollectStatus() and removeCommonCollectStatus(). These methods set or unset a flag to show that common loop editing was being performed.</li>
