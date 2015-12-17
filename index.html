@@ -49,10 +49,6 @@
 <li><p><em>Fast preview of subdivided surface</em>.  Also, it's worth noticing that most professional subdivision tools allow to work on a coarse "control cage" while simultaneously getting a preview of what the final subdivided surface will look like.  In other words, the user doesn't actually ever dice the surface into tiny polygons; they simply use the vertices, edges, and faces of the coarse shape as a way to manipulate the smooth subdivided surface.  It would definitely be valuable in your modeler to provide this kind of functionality, either by <a href="http://research.microsoft.com/en-us/um/people/cloop/accTOG.pdf">approximating subdivision patches with simpler surfaces</a> or simply by coming up with an intelligent scheme to update a fine subdivision mesh whenever the coarse vertices are changed.  One thing to think about here is that, even after <em>n</em> subdivision steps, each subdivided vertex has a linear relationship to the vertices in the control cage.  So, you could precompute a mapping (e.g., a matrix) from coarse positions to fine positions in order to get a fast preview (...until the connectivity of the coarse cage gets updated!).</p></li>
 </ul>
 
- </section>
-    </div>
-    
-    
     <!-- Project report section-->
 
 <h3>Part 1: What I did</h3>
@@ -68,7 +64,10 @@
 
     
     <!-- end project report section --> 
-
+    
+ </section>
+    </div>
+    
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
