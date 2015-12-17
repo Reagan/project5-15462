@@ -17,12 +17,12 @@
 
 <p>In this first part of the project, the idea was to extend the base code to allow for multiple selection of edges. This would allow for functionality such as creating extrusions to create features such as fingers or hands as is available in common mesh editors such as modo and blender. The starter code was modified in the following way:
 <ol>
-  <li>To begin multiple selection of nodes, users would select the 'y' key. To stop multiple selection, users would select the 'z' key. To allow for this, a few methods were added to meshEdit.cpp. The 2 methods that mark the beginning of common selection of nodes are setCommonCollectStatus() and removeCommonCollectStatus(). These methods set or unset a flag to show that common loop editing was being performed.</li>
+  <li>To begin multiple selection of nodes, select the 'y' key. To stop multiple selection, select the 'z' key. To allow for this, a few methods were added to meshEdit.cpp. The 2 methods that mark the beginning of common selection of nodes are setCommonCollectStatus() and removeCommonCollectStatus(). These methods set or unset a flag to show that common loop editing was being performed.</li>
 <li>void MeshEdit::enactPotentialSelection() was modified to detect selected features and push them into a vector.
 </li>
 <li>void MeshEdit::drawEdges( HalfedgeMesh& mesh ) was modified to detect a change in the size of the vector storing selected mesh features and automatically adapt the element style
 
-<code>
+```c
  // set the default style
             setElementStyle( elementAddress( e ) );
 
@@ -31,7 +31,7 @@
             {
                 for (std::vector<MeshFeature>::iterator iter = selectedMeshFeatures.begin();
                      iter != selectedMeshFeatures.end(); ++iter )
-</code>
+```
 </li>
 <li>The starter code was modified to create a new style that would represent the selected items that were being modified as a group of edges. This style was applied to edges using the method call setMultipleElementStyle(curr_e) and the new style was created in void MeshEdit::initializeStyle( void ) where it is referred to as combinedStyle with its halfedge, faceColor, edgeColor, vertexColor, strokeWidth and vertexRadius set.
 </li>
