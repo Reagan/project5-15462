@@ -51,29 +51,27 @@
 
 <h4>Image of loop selection in operation</h4>
 
-<img width="700" src="http://i63.tinypic.com/ibc0v5.png" />
-
-<p><i>Image showing 3 edges selected at the same time for 'loop' editing</i></p>
+<img width="300" src="http://i63.tinypic.com/ibc0v5.png" />
 
 <h3>Implementing Catmull Clark Subdivision algorithm</h3>
 
-<p>The subdivision algorithm I created for the second part of the project subdivides a mesh using the Catmul Clark algorithm. To perform the subdivision, a user selects '9' to increased the subdivision rounds and thus make the image smoother and presses '0' to reduce the subdivision rounds and thus make the image less smoother i.e. reduce the number of triangles.
+<p>The subdivision algorithm I created for the second part of the project subdivides a mesh using the Catmull-Clark algorithm. To perform the subdivision, select '9' to increased the subdivision rounds and thus make the image smoother and select '0' to reduce the subdivision rounds and thus make the image less smooth by reducing the number of triangles in the mesh.
 </p>
+
+<p>The actual steps taken to perform Catmull-Clark were based off Catmull &  Clarks' 1978 paper on the subdivision method and not on later modifications done to improve the algorithm.</p>
 
 <p>To implement the Catmull-Clark algorithm, a number of changes to the starter code were made namely:
 <ol>
-<li>A global variable roundsCatmullClark was created and manipulated (i.e. increased or decreased) using the methods MeshEdit::addCatmullClarkSubdivisionLevels() and MeshEdit::removeCatmullClarkSubdivisionLevels(). These methods increased and reduced the number of Catmull-Clark subdivision levels.</li>
+<li>A global variable roundsCatmullClark was created and manipulated (i.e. increased or decreased) using the methods MeshEdit::addCatmullClarkSubdivisionLevels() and MeshEdit::removeCatmullClarkSubdivisionLevels(). These methods increased and reduced the number of Catmull-Clark subdivision levels in meshEdit.cpp.</li>
 
 <li>These methods performed Catmull-Clark subdivision on all meshes in the scene. and finally by calling the method HalfedgeMesh* MeshResampler::catmullClarkSubdivide( HalfedgeMesh& mesh, int rounds ) in student_code.cpp to perform the actual Catmull-Clark subdivision steps
 </li>
 </ol>
 </p>
 
-<p>The actual steps taken to perform Catmull-Clark were based off Catmull &  Clarks' 1978 paper on the subdivision method and not on later modifications done to improve the algorithm.</p>
-
 <p>The steps taken to implement the Catmull-Clark algorithm in the StarterCode in student_code.cpp in HalfedgeMesh* MeshResampler::catmullClarkSubdivide( HalfedgeMesh& mesh, int rounds ) were
-<ol>
-<li>Find the new face points: Here all edges were traversed and for each face, it's 3 Vector3D vertices were used to find the midpoint dubbed 'face points'.
+<ul>
+<li>Find the new face points: Here all edges were traversed and for each face, it's 3 Vector3D vertices were used to find the midpoints dubbed 'face points'.
 </li>
 
 <li>Finding new edge points: New edge points were determined by traversing each edge and finding the average of the 2 vertices of the edge and the newly created adjacent face points created on each side of the edge. 
@@ -81,11 +79,11 @@
 
 <li>Moving vertices to create new control points: New control points or vertices were created by evaluating the formula:
 
-<code> 
+<pre> 
 Q/n + 2R/n + S9n-3)/n 
 
 where Q is the average of the sorrounding face points, R is the average of the sorrounding midpoints, S is the current control point/vertex and n is the valence (no of edges from the vertex)
-</code>
+</pre>
 
 <p>This formula then simplified out to:
 <code>
@@ -97,6 +95,7 @@ Each new Vertex/Control point = Q/4+R/2+S/4 since n=4
 </li>
 
 <li>With an increased number of polygons (triangles in this case) representing the mesh generated, the new face points, edge points and control points/vertices were then joined together to created to form a new mesh that was passed back to the created function inline void MeshEdit::addCatmullClarkSubdivisionLevels() that called the method void MeshEdit::renderMesh( HalfedgeMesh& mesh ) in meshEdit.cpp to render the new mesh. </li>
+</ul>
 </ol>
 
 <h4>Results of the Catmull Clark Subdivision</h4>
