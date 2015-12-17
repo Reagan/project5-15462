@@ -157,6 +157,37 @@ since n=4
 </p>
 
 <p>For each vertex, the function HalfedgeMesh* MeshResampler::catmullClarkSubdivide( HalfedgeMesh& mesh, int rounds ) in student_code.cpp calculated the average of neighboring face points, sorrounding mid points and summed the weighted values of these with the a weighted value of the current control point/vertex to determine the new vertex/control point of the current point</p>
+
+<pre>
+for (VertexIter vIter = mesh.verticesBegin() ; vIter != mesh.verticesEnd(); vIter++) {
+          cout << "computing midpoints for edge " << i << endl ; i++;
+          // get the faces
+          // mark as belonging to the old mesh
+          vIter->isNew = false;
+
+          // find S (current vertice/control point)
+          Vector3D s = vIter->position ;
+
+          // find Q (average of sorrounding Q points)
+          Vector3D firstControlPoint = vIter->halfedge()->face()->centerPoint ;
+          Vector3D secondControlPoint = vIter->halfedge()->twin()->face()->centerPoint ;
+          Vector3D thirdControlPoint = vIter->halfedge()->next()->next()->twin()->face()->centerPoint ;
+          Vector3D fourthControlPoint = vIter->halfedge()->twin()->next()->twin()->face()->centerPoint ;
+
+          Vector3D q = (firstControlPoint + secondControlPoint + thirdControlPoint + fourthControlPoint) / 4 ;
+
+          // find R (average of sorrounding edge midpoints)
+          Vector3D firstEdgeMidPoint = (s + vIter->halfedge()->next()->vertex()->position) / 2;
+          Vector3D secondEdgeMidPoint = (s + vIter->halfedge()->twin()->next()->next()->vertex()->position) / 2;
+          Vector3D thirdEdgeMidPoint = (s + vIter->halfedge()->next()->next()->vertex()->position) / 2;
+          Vector3D fourthEdgeMidPoint = (s + vIter->halfedge()->next()->next()->twin()->next()->next()->vertex()->position) / 2;
+
+          Vector3D r = (firstEdgeMidPoint + secondEdgeMidPoint + thirdEdgeMidPoint + fourthEdgeMidPoint) / 4 ;
+
+          // implement the formula to get new position for vertex
+          vIter->newPosition = q/4 + r/2 + s/4 ;
+       }
+</pre>
 </li>
 
 <li>With an increased number of polygons (triangles in this case) representing the mesh generated, the new face points, edge points and control points/vertices were then joined together to created to form a new mesh that was passed back to the created function inline void MeshEdit::addCatmullClarkSubdivisionLevels() that called the method void MeshEdit::renderMesh( HalfedgeMesh& mesh ) in meshEdit.cpp to render the new mesh. </li>
