@@ -1,0 +1,4 @@
+asst 2 notes
+=============
+
+The 3 required basic operations were all implemented and work fine i.e. splitting, flipping and edge collapse. However calling mesh->splitEdge(e) in task 4 causes an infinite loop to be created somewhere #bug

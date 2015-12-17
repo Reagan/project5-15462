@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="CPP_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/CMU462.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/base64.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/base64.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/color.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/color.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/complex.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/complex.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/matrix3x3.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/matrix3x3.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/matrix4x4.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/matrix4x4.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/osdfont.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/osdtext.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/osdtext.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/quaternion.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/quaternion.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/renderer.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/tinyxml2.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/tinyxml2.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/vector2D.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/vector2D.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/vector3D.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/vector3D.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/vector4D.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/vector4D.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/viewer.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMU462/src/viewer.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/camera.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/camera.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/collada.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/collada.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/halfEdgeMesh.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/halfEdgeMesh.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/light.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/light.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/material.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/material.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/mesh.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/mesh.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/meshEdit.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/meshEdit.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/scene.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/scene.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/student_code.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/student_code.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/texture.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/texture.h" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="Header Search Paths">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/CMU462/include" />
+          <root url="file://$MODULE_DIR$/CMU462/src" />
+          <root url="file:///usr/include" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+          <root url="file:///usr/local/include" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/CMU462/include" />
+          <root url="file://$MODULE_DIR$/CMU462/src" />
+          <root url="file:///usr/include" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+          <root url="file:///usr/local/include" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/CMU462/src/osdtext.cpp" />
+          <root url="file://$MODULE_DIR$/CMU462/src/base64.h" />
+          <root url="file://$MODULE_DIR$/CMU462/src/osdtext.h" />
+          <root url="file://$MODULE_DIR$/CMU462/src/tinyxml2.cpp" />
+          <root url="file://$MODULE_DIR$/CMU462/src/color.cpp" />
+          <root url="file://$MODULE_DIR$/CMU462/src/matrix3x3.cpp" />
+          <root url="file://$MODULE_DIR$/CMU462/src/tinyxml2.h" />
+          <root url="file://$MODULE_DIR$/CMU462/src/matrix4x4.cpp" />
+          <root url="file://$MODULE_DIR$/CMU462/src/matrix4x4.h" />
+          <root url="file://$MODULE_DIR$/CMU462/src/CMakeLists.txt" />
+          <root url="file://$MODULE_DIR$/CMU462/src/quaternion.h" />
+          <root url="file://$MODULE_DIR$/CMU462/src/complex.h" />
+          <root url="file://$MODULE_DIR$/CMU462/src/renderer.h" />
+          <root url="file://$MODULE_DIR$/CMU462/src/vector4D.h" />
+          <root url="file://$MODULE_DIR$/CMU462/src/vector2D.h" />
+          <root url="file://$MODULE_DIR$/CMU462/src/color.h" />
+          <root url="file://$MODULE_DIR$/CMU462/src/viewer.h" />
+          <root url="file://$MODULE_DIR$/CMU462/src/complex.cpp" />
+          <root url="file://$MODULE_DIR$/CMU462/src/quaternion.cpp" />
+          <root url="file://$MODULE_DIR$/CMU462/src/viewer.cpp" />
+          <root url="file://$MODULE_DIR$/CMU462/src/vector4D.cpp" />
+          <root url="file://$MODULE_DIR$/CMU462/src/matrix3x3.h" />
+          <root url="file://$MODULE_DIR$/CMU462/src/CMU462.h" />
+          <root url="file://$MODULE_DIR$/CMU462/src/vector3D.h" />
+          <root url="file://$MODULE_DIR$/CMU462/src/osdfont.c" />
+          <root url="file://$MODULE_DIR$/CMU462/src/base64.cpp" />
+          <root url="file://$MODULE_DIR$/CMU462/src/vector3D.cpp" />
+          <root url="file://$MODULE_DIR$/CMU462/src/vector2D.cpp" />
+        </excluded>
+      </library>
+    </orderEntry>
+  </component>
+</module>
