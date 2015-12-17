@@ -15,8 +15,7 @@
 
 <h3>Multiple/Loop selection of nodes</h3>
 
-<pM 
-<p>To extend the base code to allow for multiple selection of edges, the starter code was modified in the following way:
+<p>In this first part of the project, the idea was to extend the base code to allow for multiple selection of edges. This would allow for functionality such as creating extrusions to create features such as fingers or hands as is available in common mesh editors such as modo and blender. The starter code was modified in the following way:
 <ol>
   <li>To begin multiple selection of nodes, users would select the 'y' key. To stop multiple selection, users would select the 'z' key. To allow for this, a few methods were added to meshEdit.cpp. The 2 methods that mark the beginning of common selection of nodes are setCommonCollectStatus() and removeCommonCollectStatus(). These methods set or unset a flag to show that common loop editing was being performed.</li>
 <li>void MeshEdit::enactPotentialSelection() was modified to detect selected features and push them into a vector.
